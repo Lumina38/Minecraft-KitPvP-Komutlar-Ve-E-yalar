@@ -1,0 +1,19 @@
+package com.ornek.kitpvp;
+
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class KitPvP extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        getLogger().info("Lumina Plugin Aktif!");
+        Bukkit.getPluginManager().registerEvents(new KitPvPListener(), this);
+        this.getCommand("kit").setExecutor(new KitCommand());
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("KitPvP Plugin Kapatıldı!");
+    }
+}
